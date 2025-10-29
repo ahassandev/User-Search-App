@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Search App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    input {
+      padding: 8px;
+      width: 250px;
+      border-color: blue;
+    }
+    button {
+      padding: 8px 15px;
+      cursor: pointer;
+      border-color: blue;
+    }
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 10px;
+      text-align: left;
+      background-color: #3498db;
+      color: white;
+    }
+
+  .loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-top: 15px;
+  display: none; /* hidden by default */
+
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: none; /* default hidden */
+  z-index: 999;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+    #loading { font-size: 18px; font-weight: bold; color: green; }
+  </style>
+</head>
+<body>
+  <h2 class="text-warning">User Search</h2>
+  <input type="text" id="searchInput" placeholder="Enter user name...">
+  <button id="searchBtn">Search</button>
+  <p id="loading">Loading users....  Please Wait</p>
+  <div id="spinner" class="loader"></div>
+
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody id="userTableBody"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
