@@ -46,7 +46,20 @@ function displayUsers(users){
 searchBtn.addEventListener("click", () => {
   const searchValue = searchInput.value.toLowerCase();
   const filtered = allUsers.filter(user =>
-    (`${user.name.first} ${user.name.last}`).toLowerCase().includes(searchValue)
+    (`${user.name.first} ${user.name.last} ${user.location.city} ${user.location.country}`).toLowerCase().includes(searchValue)
   );
   displayUsers(filtered);
 });
+
+searchInput.addEventListener("input", () => {
+  const searchValue = searchInput.value.toLowerCase();
+
+  const filtered = allUsers.filter(user =>
+    (`${user.name.first} ${user.name.last} ${user.location.city} ${user.location.country}`)
+      .toLowerCase()
+      .includes(searchValue)
+  );
+
+  displayUsers(filtered);
+});
+
