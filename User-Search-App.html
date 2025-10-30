@@ -53,7 +53,6 @@
   margin-top: 15px;
   display: none; /* hidden by default */
 
-
   position: fixed;
   top: 50%;
   left: 50%;
@@ -68,10 +67,20 @@
   100% { transform: rotate(360deg); }
 }
     #loading { font-size: 18px; font-weight: bold; color: green; }
+
+
+    .top-section, .bottom-section{
+      height: 50vh;
+      overflow-y: scroll;
+      border: 1px solid #333;
+      padding: 10px;
+    }
   </style>
 </head>
 <body>
-  <h2>User Search</h2>
+
+  <div class="top-section">
+    <h2>User Search</h2>
   <input type="text" id="searchInput" placeholder="Enter user name...">
   <button id="searchBtn">Search</button>
   <p id="loading">Loading users....  Please Wait</p>
@@ -88,6 +97,18 @@
     </thead>
     <tbody id="userTableBody"></tbody>
   </table>
+  </div>
+
+  <div class="bottom-section">
+    <h2>Project 2</h2>
+        <table>
+            <thead>
+                <tr><th>Name</th><th>Email</th><th>City</th></tr>
+            </thead>
+            <tbody id="userBody2"></tbody>
+        </table>
+  </div>
+  
 
   <script src="script.js"></script>
 </body>
