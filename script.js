@@ -10,11 +10,11 @@ const spinnerBottom = document.getElementById("spinnerBottom");
 
 let allUsers = [];
 
-//  Show TOP loader
+
 loadingTop.style.display = "block";
 spinnerTop.style.display = "block";
 
-//  Promise for TOP section
+
 new Promise((resolve, reject) => {
   fetch("https://randomuser.me/api/?results=5000")
     .then(res => res.json())
@@ -46,7 +46,7 @@ function displayUsers(users) {
   tableBody.innerHTML = rows.join("");
 }
 
-// Search by button
+
 searchBtn.addEventListener("click", () => {
   const searchValue = searchInput.value.toLowerCase();
   const filtered = allUsers.filter(user =>
@@ -57,7 +57,7 @@ searchBtn.addEventListener("click", () => {
   displayUsers(filtered);
 });
 
-//  Live search
+
 searchInput.addEventListener("input", () => {
   const searchValue = searchInput.value.toLowerCase();
   const filtered = allUsers.filter(user =>
@@ -68,7 +68,7 @@ searchInput.addEventListener("input", () => {
   displayUsers(filtered);
 });
 
-//  Promise for BOTTOM section
+
 loadingBottom.style.display = "block";
 spinnerBottom.style.display = "block";
 
